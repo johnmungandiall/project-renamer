@@ -1,0 +1,22 @@
+# Core dependencies for Project Renamer
+PyYAML>=6.0
+setuptools>=45.0
+
+# Optional dependencies for enhanced functionality
+colorama>=0.4.4  # Cross-platform colored terminal text
+tqdm>=4.62.0     # Progress bars for long operations
+click>=8.0.0     # Alternative CLI framework
+
+# Development dependencies
+pytest>=6.0.0
+pytest-cov>=2.0.0
+black>=21.0.0
+flake8>=3.8.0
+mypy>=0.910
+
+# Documentation dependencies
+sphinx>=4.0.0
+sphinx-rtd-theme>=0.5.0
+
+# Note: Most functionality works with just PyYAML and setuptools
+# Additional dependencies are optional and provide enhanced features

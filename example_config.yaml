@@ -1,0 +1,196 @@
+# Example Configuration File for Project Renamer
+# Copy this file and modify according to your needs
+
+# Basic renaming information
+old_name: "my-old-project"
+new_name: "my-new-project"
+project_path: "/path/to/your/project"
+
+# Behavior settings
+backup_enabled: true        # Create automatic backups
+dry_run: false             # Set to true for testing
+case_sensitive: false      # Use case-insensitive matching
+preserve_case: true        # Maintain original case patterns
+follow_symlinks: false     # Don't follow symbolic links
+
+# File handling configuration
+file_types:
+  # Programming languages
+  - .py          # Python
+  - .js          # JavaScript
+  - .jsx         # React JSX
+  - .ts          # TypeScript
+  - .tsx         # React TSX
+  - .java        # Java
+  - .cpp         # C++
+  - .c           # C
+  - .h           # Header files
+  - .cs          # C#
+  - .php         # PHP
+  - .rb          # Ruby
+  - .go          # Go
+  - .rs          # Rust
+  - .swift       # Swift
+  - .kt          # Kotlin
+  - .scala       # Scala
+
+  # Web technologies
+  - .html        # HTML
+  - .htm         # HTML
+  - .css         # CSS
+  - .scss        # Sass
+  - .sass        # Sass
+  - .less        # Less
+
+  # Configuration files
+  - .json        # JSON
+  - .xml         # XML
+  - .yaml        # YAML
+  - .yml         # YAML
+  - .toml        # TOML
+  - .ini         # INI
+  - .cfg         # Config
+  - .conf        # Config
+
+  # Documentation
+  - .md          # Markdown
+  - .txt         # Text
+  - .rst         # reStructuredText
+  - .adoc        # AsciiDoc
+
+  # Shell and scripts
+  - .sh          # Bash
+  - .bat         # Windows Batch
+  - .ps1         # PowerShell
+  - .dockerfile  # Docker
+  - .dockerignore
+
+  # Special files
+  - .gitignore
+  - .gitattributes
+  - .env
+  - .env.example
+
+  # Build and package files
+  - Dockerfile
+  - docker-compose.yml
+  - docker-compose.yaml
+  - package.json
+  - requirements.txt
+  - setup.py
+  - pyproject.toml
+  - Makefile
+  - CMakeLists.txt
+  - pom.xml
+  - build.gradle
+
+# Patterns to exclude from processing
+exclude_patterns:
+  # Version control
+  - .git
+  - .svn
+  - .hg
+
+  # Python
+  - __pycache__
+  - .pytest_cache
+  - .venv
+  - venv
+  - env
+  - .tox
+  - .coverage
+  - *.egg-info
+  - *.pyc
+  - *.pyo
+  - *.pyd
+
+  # Node.js
+  - node_modules
+  - bower_components
+  - .npm
+
+  # Java
+  - target
+  - .gradle
+  - .idea
+  - .eclipse
+
+  # Build outputs
+  - dist
+  - build
+  - out
+  - .cache
+
+  # IDEs
+  - .idea
+  - .vscode
+  - .vs
+  - *.swp
+  - *.swo
+
+  # System files
+  - .DS_Store
+  - Thumbs.db
+  - desktop.ini
+
+  # Logs and temporary files
+  - *.log
+  - *.tmp
+  - *.temp
+
+# Custom rename rules
+# Add specific patterns for complex replacements
+custom_rules:
+  # Example: Replace specific patterns with custom logic
+  - pattern: "old-namespace"
+    replacement: "new-namespace"
+    case_sensitive: false
+    preserve_case: true
+    # Optional: limit to specific file types
+    file_types:
+      - .py
+      - .java
+    # Optional: exclude certain patterns
+    exclude_patterns:
+      - test_*
+
+  # Example: Case-sensitive replacement
+  - pattern: "API_VERSION"
+    replacement: "API_VERSION_NEW"
+    case_sensitive: true
+    preserve_case: false
+
+# Advanced settings
+encoding: "utf-8"          # File encoding
+errors: "ignore"           # How to handle encoding errors
+max_file_size: 10485760    # Maximum file size in bytes (10MB)
+max_depth: 10              # Maximum directory depth to process
+
+# Logging configuration
+log_level: "INFO"          # DEBUG, INFO, WARNING, ERROR
+log_file: "rename_log.txt" # Log file path (relative to project)
+
+# Safety features
+confirm_large_operations: true    # Confirm before large operations
+max_files_before_warning: 100     # Warn if more than this many files affected
+require_git_clean: false          # Require clean Git status
+
+# Backup settings
+backup_dir: "backups"      # Backup directory name
+backup_with_timestamp: true # Include timestamp in backup names
+compress_backups: false     # Compress backup archives
+
+# Performance settings
+parallel_processing: false  # Enable parallel file processing
+chunk_size: 8192           # File reading chunk size
+max_workers: 4             # Number of worker processes
+
+# Post-renaming actions
+run_linters: false         # Run linters after renaming
+run_tests: false           # Run tests after renaming
+update_copyright: false    # Update copyright notices
+
+# Validation settings
+validate_after_rename: true # Validate files after renaming
+check_imports: false        # Check for broken imports after renaming
+verify_file_integrity: true # Verify file checksums after operations
